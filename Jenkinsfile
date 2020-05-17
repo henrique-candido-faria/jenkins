@@ -7,9 +7,10 @@ pipeline {                  // Jenkinsfile (Declarative Pipeline)
     stage('Stage 1') {
       steps {
         // sh 'ssh -tt ip172-18-0-42-br0i4liosm4g00b70ql0@direct.labs.play-with-docker.com'
-        sh 'cd /'
-        sh 'ssh ip172-18-0-8-br0nbqqosm4g008cp8fg@direct.labs.play-with-docker.com'
         // sh 'ssh -o StrictHostKeyChecking=no ip172-18-0-8-br0nbqqosm4g008cp8fg@direct.labs.play-with-docker.com uptime'
+        sh 'cd /'
+        sh 'ls'
+        sh 'ssh -tt ip172-18-0-8-br0nbqqosm4g008cp8fg@direct.labs.play-with-docker.com'
       }
     }
   }
