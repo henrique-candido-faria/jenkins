@@ -6,7 +6,7 @@ pipeline {                  // Jenkinsfile (Declarative Pipeline)
   stages {                // Cada seção do estágio tem etapas e comandos diferentes a serem seguidos
     stage('Stage 1') {
       steps {
-        sh 'ssh ip172-18-0-42-br0i4liosm4g00b70ql0@direct.labs.play-with-docker.com'
+        sh 'ssh -tt ip172-18-0-42-br0i4liosm4g00b70ql0@direct.labs.play-with-docker.com'
         // sh 'ssh -o StrictHostKeyChecking=no ip172-18-0-23-br02sttim9m000ci9vp0@direct.labs.play-with-docker.com uptime'
         sh 'ls /'
       }
