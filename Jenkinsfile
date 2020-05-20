@@ -6,7 +6,7 @@ pipeline {                  // Jenkinsfile (Declarative Pipeline)
   stages {                // Cada seção do estágio tem etapas e comandos diferentes a serem seguidos
     stage('Stage 1') {
       steps {
-        sh 'docker --version'
+        sh 'curl -fsSL https://get.docker.com | bash docker version'
       }
     }
   }
