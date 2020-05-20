@@ -7,6 +7,7 @@ pipeline {                  // Jenkinsfile (Declarative Pipeline)
     stage('Stage 1') {
       steps {
         sh 'docker container run -d -p 8000:8000 nginx'
+        print "http://localhost:8000/"
       }
     }
   }
