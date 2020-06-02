@@ -13,7 +13,7 @@ pipeline {                  // Jenkinsfile (Declaração de Pipeline)
   stages {                // Cada seção do estágio tem etapas e comandos diferentes a serem seguidos
     stage('Stage 1') {
       steps {
-        sh 'cd /docker/'
+        sh 'cd docker/'
         sh 'sh docker.sh'
       }
     }
