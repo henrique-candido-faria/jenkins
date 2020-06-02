@@ -5,6 +5,7 @@
 // https://medium.com/@marcosnils/pwd-ssh-c12080ea11d1
 // https://medium.com/lucjuggery/now-a-pwd-driver-for-docker-machine-54c672d69e56
 // https://github.com/play-with-docker/docker-machine-driver-pwd/releases
+// https://docs.docker.com/engine/install/debian/
 
 // cat /var/lib/jenkins/secrets/initialAdminPassword
 
