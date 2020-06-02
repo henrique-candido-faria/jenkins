@@ -14,7 +14,7 @@ pipeline {                  // Jenkinsfile (Declaração de Pipeline)
     stage('Stage 1') {
       steps {
         sh 'cd docker/install/'
-        sh 'sh docker.sh'
+        sh 'sh docker.sh | bash'
       }
     }
   }
