@@ -11,7 +11,7 @@
 // cat /var/lib/jenkins/secrets/initialAdminPassword
 
 // Definindo variavel
-def conf = params.ACTION.toLowerCase ()
+def conf = ACTION
 def install = "install"
 def uninstall = "uninstall"
 
