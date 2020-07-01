@@ -25,7 +25,7 @@ pipeline {                  // Jenkinsfile (Declaração de Pipeline)
   stages {                // Cada seção do estágio tem etapas e comandos diferentes a serem seguidos
     stage('Stage 1') {
       steps {
-        sh 'ansible-playbook ansible/playbook/docker-uninstall.yaml -i ansible/inventory/local.ini -v' // Configuração em arquivo sudores para usuário jenkins
+        sh 'ansible-playbook ansible/playbook/docker-install.yaml -i ansible/inventory/local.ini -v' // Configuração em arquivo sudores para usuário jenkins
       }
     }
   }
