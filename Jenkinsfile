@@ -11,12 +11,12 @@
 // cat /var/lib/jenkins/secrets/initialAdminPassword
 
 // Definindo variavel
-// def conf = ACTION
-// def install = "install"
-// def uninstall = "uninstall"
+def conf = ACTION
+def install = "install"
+def uninstall = "uninstall"
 
 // Definindo condições
-if (ACTION == install) {
+if (conf == install) {
   option = "install"
 }
 
