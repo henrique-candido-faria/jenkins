@@ -10,12 +10,22 @@
 
 // cat /var/lib/jenkins/secrets/initialAdminPassword
 
+// Definindo variavel
+def conf = params.ACTION.toLowerCase ()
+def install = "install"
+def uninstall = "uninstall"
+
+// Definindo condições
+if (conf == install) {
+  $option = install
+}
+
 pipeline {                  // Jenkinsfile (Declaração de Pipeline)
   agent any                // Isso define onde executar o código em qual máquina ou pipeline {agent{node{label'labelName'}}}
   stages {                // Cada seção do estágio tem etapas e comandos diferentes a serem seguidos
     stage('Stage 1') {
       steps {
-        sh 'ansible-playbook ansible/playbook/docker.yaml -i ansible/inventory/local.ini -v' // Configuração em arquivo sudores para usuário jenkins
+        sh 'ansible-playbook ansible/playbook/docker-${option}.yaml -i ansible/inventory/local.ini -v' // Configuração em arquivo sudores para usuário jenkins
       }
     }
   }
