@@ -17,7 +17,7 @@ def uninstall = "uninstall"
 
 // Definindo condições
 if (conf == install) {
-  $option = install
+  option = "install"
 }
 
 pipeline {                  // Jenkinsfile (Declaração de Pipeline)
