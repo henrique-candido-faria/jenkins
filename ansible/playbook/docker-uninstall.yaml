@@ -5,7 +5,7 @@
 
     - name: INSTALL DOCKER-CE
       shell:
-        cmd: dpkg -l | grep -i docker
+        # cmd: dpkg -l | grep -i docker
         cmd: sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli
         cmd: sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce
         cmd: sudo rm -rf /var/lib/docker /etc/docker
