@@ -10,4 +10,3 @@
         cmd: sudo rm -rf /var/lib/docker /etc/docker
         cmd: sudo groupdel docker
         cmd: sudo rm -rf /var/run/docker.sock
-        cmd: docker version
