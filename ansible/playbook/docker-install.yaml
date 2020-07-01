@@ -6,4 +6,4 @@
     - name: INSTALL DOCKER-CE
       shell:
         cmd: sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-        cmd: docker version
+        # cmd: docker version
