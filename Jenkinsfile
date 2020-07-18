@@ -16,7 +16,7 @@
 // def uninstall = 'uninstall'
 
 // Condicoes
-if (CONFIGURACAO == 'install') {
+if (ACTION == 'install') {
   variavel = 'install'
 }
 else {
