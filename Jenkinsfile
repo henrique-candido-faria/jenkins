@@ -19,6 +19,9 @@
 if (CONFIGURACAO == 'install') {
   variavel = 'install'
 }
+else {
+  variavel = 'uninstall'
+}
 
 pipeline {                  // Jenkinsfile (Declaração de Pipeline)
   agent any                // Isso define onde executar o código em qual máquina ou pipeline {agent{node{label'labelName'}}}
