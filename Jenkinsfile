@@ -16,8 +16,8 @@
 // def uninstall = 'uninstall'
 
 // Condicoes
-if (CONFIGURACAO == install) {
-  variavel = "install"
+if (CONFIGURACAO == 'install') {
+  variavel = 'install'
 }
 
 pipeline {                  // Jenkinsfile (Declaração de Pipeline)
