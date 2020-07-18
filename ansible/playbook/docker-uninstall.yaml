@@ -5,8 +5,8 @@
 
     - name: UNINSTALL DOCKER-CE
       shell:
-        cmd: sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli
-        cmd: sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce
-        cmd: sudo rm -rf /var/lib/docker /etc/docker
-        cmd: sudo groupdel docker
-        cmd: sudo rm -rf /var/run/docker.sock
+        cmd: apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli
+        cmd: apt-get autoremove -y --purge docker-engine docker docker.io docker-ce
+        cmd: rm -rf /var/lib/docker /etc/docker
+        cmd: groupdel docker
+        cmd: rm -rf /var/run/docker.sock
