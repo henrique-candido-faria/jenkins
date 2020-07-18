@@ -19,13 +19,13 @@
 if (CONFIGURACAO == 'install') {
   variavel = 'install'
 }
-print "${variavel}"
 
 pipeline {                  // Jenkinsfile (Declaração de Pipeline)
   agent any                // Isso define onde executar o código em qual máquina ou pipeline {agent{node{label'labelName'}}}
   stages {                // Cada seção do estágio tem etapas e comandos diferentes a serem seguidos
     stage('Stage 1') {
       steps {
+        print "${variavel}"
         sh 'ansible-playbook ansible/playbook/docker-${variavel}.yaml -i ansible/inventory/local.ini -v' // Configuração em arquivo sudores para usuário jenkins
       }
     }
