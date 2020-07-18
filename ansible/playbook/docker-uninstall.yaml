@@ -3,7 +3,7 @@
   connection: local
   tasks:
 
-    - name: INSTALL DOCKER-CE
+    - name: UNINSTALL DOCKER-CE
       shell:
         cmd: sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli
         cmd: sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce
