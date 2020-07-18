@@ -19,7 +19,7 @@
 if (CONFIGURACAO == 'install') {
   variavel = 'install'
 }
-print ${variavel}
+print "${variavel}"
 
 pipeline {                  // Jenkinsfile (Declaração de Pipeline)
   agent any                // Isso define onde executar o código em qual máquina ou pipeline {agent{node{label'labelName'}}}
