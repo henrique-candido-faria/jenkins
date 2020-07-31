@@ -30,6 +30,7 @@ pipeline {                  // Jenkinsfile (Declaração de Pipeline)
       steps {
         print "${variavel}"
         sh "ansible-playbook ansible/playbook/docker-'${variavel}'.yaml -i ansible/inventory/local.ini -v" // Configuração em arquivo sudores para usuário jenkins
+        sh "docker -v"
       }
     }
   }
