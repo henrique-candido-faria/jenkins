@@ -3,8 +3,14 @@ pipeline {
     stages {
         stage("git") {
             steps {
-                git credentialsId: 'github', url: 'https://github.com/henrique-candido-faria/python.git'
-                sh "ls -l"
+                checkout([
+                $class: "GitSCM",
+                branches: [[name: "dev"]],
+                doGenerateSubmoduleConfigurations: false,
+                extensions: [[$class: "RelativeTargetDirectory", relativeTargetDir: "tmp_git_app"]],
+                submoduleCfg: [],
+                userRemoteConfigs: [[credentialsId: "github", url: 'https://github.com/henrique-candido-faria/python.git']]
+                ])
             }
         }
     }
