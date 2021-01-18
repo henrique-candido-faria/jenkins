@@ -1,8 +1,0 @@
----
-- hosts: local
-  connection: local
-  tasks:
-
-    - name: INSTALL DOCKER-CE
-      shell:
-        cmd: sudo apt-get install -y docker-ce docker-ce-cli containerd.io
