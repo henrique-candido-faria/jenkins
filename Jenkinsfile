@@ -1,19 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage("build"){
+        stage("repository"){
             steps{
-                echo 'building the application...'
-            }
-        }
-        stage("test"){
-            steps{
-                echo 'testing the application...'
-            }
-        }
-        stage("deploy"){
-            steps{
-               echo 'deployins the application...'
+                git clone https://github.com/henrique-candido-faria/python.git
             }
         }
     }
