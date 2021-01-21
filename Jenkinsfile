@@ -6,7 +6,7 @@ pipeline {
         stage("repository") {
             steps {
                 echo 'Hello World!'
-                sh 'echo myCustomEnvVar = $myCustomEnvVar'
+                // sh 'echo myCustomEnvVar = $myCustomEnvVar'
             }
             // steps {
             //     checkout([
