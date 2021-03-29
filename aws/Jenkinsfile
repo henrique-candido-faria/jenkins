@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'emr/list-cluster.sh'
+                sh '../aws/emr/list-cluster.sh'
             }
         }
     }
