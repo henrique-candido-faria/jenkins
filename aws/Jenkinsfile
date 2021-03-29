@@ -1,0 +1,10 @@
+pipeline {
+    agent master
+    stages {
+        stage('Build') {
+            steps {
+                sh 'emr/list-cluster.sh'
+            }
+        }
+    }
+}
