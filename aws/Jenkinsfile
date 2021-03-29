@@ -3,12 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '''
-                    aws emr list-clusters \
-                        --region us-east-1 \
-                        --active \
-                        --profile socialminer
-                '''
+                sh ("""
+                    ../aws/emr/list-clusters.sh
+                """)
             }
         }
     }
