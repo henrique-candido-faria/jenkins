@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh ("""
-                    ../aws/emr/list-clusters.sh
+                    ../emr/list-clusters.sh
                 """)
             }
         }
