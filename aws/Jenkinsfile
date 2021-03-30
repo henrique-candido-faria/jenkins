@@ -9,9 +9,13 @@ node {
                 --region us-east-1 \
                 --active --output json \
                 --query 'Clusters[*].[Id]'`
+
+            echo "${LIST_CLUSTERS}"
+
             LIST_CLUSTERS_FORMATED= \
             `$(echo $LIST_CLUSTERS \
             |sed 's/[][]//g')`
+
             echo "${LIST_CLUSTERS_FORMATED}"
         '''
     }
