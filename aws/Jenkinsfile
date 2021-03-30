@@ -5,7 +5,6 @@ node {
     usernameVariable: 'AWS_ACCESS_KEY_ID',
     passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
         LIST_CLUSTERS = sh (script: 'aws emr list-clusters --region us-east-1 --active --output text --query Clusters[*].[Id]',returnStdout: true).trim()
-        echo "${LIST_CLUSTERS}"
-    }
+    }cho "${LIST_CLUSTERS}"
   }
 }
