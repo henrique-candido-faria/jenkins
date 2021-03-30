@@ -5,12 +5,8 @@ node {
     usernameVariable: 'AWS_ACCESS_KEY_ID',
     passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
         LIST_CLUSTERS = sh (script: 'aws emr list-clusters --region us-east-1 --active --output json --query Clusters[*].Id[].Id',returnStdout: true).trim()
-        echo "${LIST_CLUSTERS}"
+        AWS("--region=us-east-1 --cluster-ids ${LIST_CLUSTERS} emr terminate-clusters")
+
     }
   }
-//   stage("TERMINATE CLUSTERS") {
-//     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'aws-key', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-//         AWS("--region=us-east-1 --cluster-ids ${LIST_CLUSTERS} emr terminate-clusters")
-//     }
-//   }
 }
