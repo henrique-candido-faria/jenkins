@@ -1,4 +1,4 @@
-@Library('github.com/releaseworks/jenkinslib') _
+// @Library('github.com/releaseworks/jenkinslib') _
 
 node {
   stage("LIST CLUSTERS") {
@@ -6,7 +6,13 @@ node {
     credentialsId: 'aws-key',
     usernameVariable: 'AWS_ACCESS_KEY_ID',
     passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-        LIST_CLUSTERS=AWS("--region=us-east-1 --active --output=text --query 'Clusters[*].[Id]' emr list-clusters") | echo "${LIST_CLUSTERS}"
+        sh """
+            aws emr list-clusters \
+            --region us-east-1 \
+            --active \
+            --output text \
+            --query 'Clusters[*].[Id]'
+        """
     }
   }
 //   stage("TERMINATE CLUSTERS") {
