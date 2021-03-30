@@ -6,7 +6,7 @@ node {
     credentialsId: 'aws-key',
     usernameVariable: 'AWS_ACCESS_KEY_ID',
     passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-        AWS("--region=us-east-2 --active --output=text --query='Clusters[*].[Id]' emr list-clusters")
+        AWS("--region=us-east-1 --active --output=text emr list-clusters")
     }
     echo "${AWS}"
   }
