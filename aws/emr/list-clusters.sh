@@ -6,4 +6,5 @@ aws emr list-clusters \
     --query 'Clusters[*].[Id]' \
     --profile socialminer`
 
-echo $LIST_CLUSTERS
+LIST_CLUSTERS_FORMATED=$(echo $LIST_CLUSTERS |sed 's/[][]//g')
+echo $LIST_CLUSTERS_FORMATED
