@@ -4,15 +4,10 @@ node {
     credentialsId: 'aws-key',
     usernameVariable: 'AWS_ACCESS_KEY_ID',
     passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-        LIST_CLUSTERS = sh (
-            'aws emr list-clusters \
-                --region us-east-1 \
-                --active \
-                --output text \
-                --query Clusters[*].[Id]'
-        )
+        LIST_CLUSTERS = sh (script: 'aws emr list-clusters --region us-east-1 --active --output text --query Clusters[*].[Id]',returnStdout: true).trim()
         echo "${LIST_CLUSTERS}"
     }
+GIT_COMMIT_EMAIL = sh (script: 'git --no-pager show -s --format=\'%ae\'',returnStdout: true).trim()
   }
 //   stage("TERMINATE CLUSTERS") {
 //     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'aws-key', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
