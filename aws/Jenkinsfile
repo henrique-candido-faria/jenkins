@@ -6,7 +6,7 @@ node {
     passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
         LIST_CLUSTERS = sh (script: 'aws emr list-clusters --region us-east-1 --active --output json --query Clusters[*].[Id]',returnStdout: true).trim()
         echo "${LIST_CLUSTERS}"
-        LIST_CLUSTERS_FORMATED = sh (script: "LIST_CLUSTERS_FORMATED=$(echo $LIST_CLUSTERS |sed 's/[][]//g'))"
+        LIST_CLUSTERS_FORMATED = sh (script: LIST_CLUSTERS_FORMATED=$(echo $LIST_CLUSTERS |sed 's/[][]//g'))
         echo "${LIST_CLUSTERS_FORMATED}"
         // sh (script: "aws emr terminate-clusters --region us-east-1 --cluster-ids ${LIST_CLUSTERS_FORMATED}")
     }
