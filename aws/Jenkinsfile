@@ -4,20 +4,19 @@ node {
     credentialsId: 'aws-key',
     usernameVariable: 'AWS_ACCESS_KEY_ID',
     passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+        LIST_CLUSTERS=
         sh '''
-            LIST_CLUSTERS=`aws emr list-clusters \
+            aws emr list-clusters \
                 --region us-east-1 \
                 --active --output json \
-                --query 'Clusters[*].[Id]'`
-
-            echo "${LIST_CLUSTERS}"
-
-            LIST_CLUSTERS_FORMATED= \
-            `$(echo $LIST_CLUSTERS \
-            |sed 's/[][]//g')`
-
-            echo "${LIST_CLUSTERS_FORMATED}"
+                --query 'Clusters[*].[Id]'
         '''
+        echo "${LIST_CLUSTERS}"
+        LIST_CLUSTERS_FORMATED=
+        sh '''
+            echo $LIST_CLUSTERS |sed 's/[][]//g')`
+        '''
+        echo "${LIST_CLUSTERS_FORMATED}"
     }
   }
 }
