@@ -6,8 +6,12 @@ node {
     credentialsId: 'aws-key',
     usernameVariable: 'AWS_ACCESS_KEY_ID',
     passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-        LIST_CLUSTER=AWS("--region=us-east-1 --active --output=text --query 'Clusters[*].[Id]' emr list-clusters")
-        echo "${LIST_CLUSTER}"
+        LIST_CLUSTER=AWS("
+        --region=us-east-1
+        --active --output=text
+        --query 'Clusters[*].[Id]'
+        emr list-clusters"
+        echo "${LIST_CLUSTER}")
     }
   }
 //   stage("TERMINATE CLUSTERS") {
