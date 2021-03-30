@@ -3,9 +3,9 @@
 node {
   stage("LIST CLUSTERS") {
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'aws-key', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-        LIST_CLUSTERS="AWS('--region=us-east-2 --active --output=text --query='Clusters[*].[Id]' emr list-clusters')"
-        echo "${LIST_CLUSTERS}"
+        LIST_CLUSTER = AWS("--region=us-east-2 --active --output=text --query='Clusters[*].[Id]' emr list-clusters")
     }
+    echo "${LIST_CLUSTERS}"
   }
 //   stage("TERMINATE CLUSTERS") {
 //     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'aws-key', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
