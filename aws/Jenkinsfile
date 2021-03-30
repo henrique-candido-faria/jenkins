@@ -11,7 +11,7 @@ node {
             --output text \
             --query 'Clusters[*].[Id]'`
         '''
-        echo "${LIST_CLUSTERS}"
+        echo "$LIST_CLUSTERS"
     }
   }
 //   stage("TERMINATE CLUSTERS") {
