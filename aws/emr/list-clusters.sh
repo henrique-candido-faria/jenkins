@@ -1,9 +1,9 @@
-# LIST_CLUSTERS=`
+LIST_CLUSTERS=`
 aws emr list-clusters \
     --region us-east-1 \
     --active \
-    --output text \
+    --output json \
     --query 'Clusters[*].[Id]' \
-    --profile socialminer
+    --profile socialminer`
 
-# echo $LIST_CLUSTERS
+echo $LIST_CLUSTERS
