@@ -1,16 +1,11 @@
-pipeline {
-    agent {
-        node {
-            stage("LIST CLUSTERS") {
-                steps {
-                    withCredentials([[$class: 'UsernamePasswordMultiBinding',
-                    credentialsId: 'aws-key',
-                    usernameVariable: 'AWS_ACCESS_KEY_ID',
-                    passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-                        ls
-                    }
-                }
-            }
+
+node {
+    stage("LIST CLUSTERS") {
+        withCredentials([[$class: 'UsernamePasswordMultiBinding',
+        credentialsId: 'aws-key',
+        usernameVariable: 'AWS_ACCESS_KEY_ID',
+        passwordVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+            ls
         }
     }
 }
