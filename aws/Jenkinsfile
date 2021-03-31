@@ -13,7 +13,7 @@ node {
                     --output json \
                     --query 'Clusters[*].[Id]'
 
-                LIST_CLUSTERS_FORMATED=$(echo $LIST_CLUSTERS |sed 's/[][]//g')
+                LIST_CLUSTERS_FORMATED=$(echo "${LIST_CLUSTERS}" |sed 's/[][]//g')
                 echo $LIST_CLUSTERS_FORMATED
             }
         }
