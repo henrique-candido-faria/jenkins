@@ -10,7 +10,8 @@ node {
                 --region us-east-1 \
                 --active \
                 --output json \
-                --query 'Clusters[*].[Id]'`
+                --query 'Clusters[*].[Id]' \
+                --output text`
         '''
     }
   }
