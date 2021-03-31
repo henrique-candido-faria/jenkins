@@ -12,8 +12,6 @@ node {
                     --active \
                     --output json \
                     --query 'Clusters[*].[Id]'
-
-                echo "${LIST_CLUSTERS}"
             }
         }
     }
