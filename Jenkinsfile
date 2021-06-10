@@ -1,8 +1,14 @@
 node('jenkins-slave') {
-    
-     stage('unit-tests') {
-        sh(script: """
-            docker run --rm alpine /bin/sh -c "echo hello world"
-        """)
+    stage('ENVIRONMENT') {
+        steps {
+            checkout([
+            $class: "GitSCM",
+            branches: [[name: "master"]],
+            doGenerateSubmoduleConfigurations: false,
+            extensions: [[$class: "RelativeTargetDirectory", relativeTargetDir: "tmp_git_app"]],
+            submoduleCfg: [],
+            userRemoteConfigs: [[credentialsId: "bitbucket", url: "https://github.com/henrique-candido-faria/python"]]
+            ])
+        }
     }
 }
