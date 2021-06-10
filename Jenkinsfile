@@ -1,5 +1,6 @@
 node('jenkins-slave') {
     stage('ENVIRONMENT') {
+        when { changeset "readme.md"}
         steps {
             checkout([
             $class: "GitSCM",
