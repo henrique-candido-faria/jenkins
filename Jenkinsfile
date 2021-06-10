@@ -15,7 +15,7 @@
 // }
 
 stage ("Deploy branches") {
-    agent any
+    node('jenkins-slave')
 
     when { 
         allOf {
