@@ -1,9 +1,7 @@
 podTemplate {
     node('jenkins-slave') {
         stage('Example Build') {
-            // step {
-            //     echo 'Hello World'
-            // }
+            echo 'Hello World'
         }
         // stage('Example Deploy') {
         //     when {
