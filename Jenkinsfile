@@ -39,19 +39,17 @@
 
 
 node('jenkins-slave'){
-    stages {
-        stage('Example Build') {
-            steps {
-                echo 'Hello World'
-            }
+    stage('Example Build') {
+        steps {
+            echo 'Hello World'
         }
-        stage('Example Deploy') {
-            when {
-                branch 'master'
-            }
-            steps {
-                echo 'Deploying'
-            }
+    }
+    stage('Example Deploy') {
+        when {
+            branch 'master'
+        }
+        steps {
+            echo 'Deploying'
         }
     }
 }
