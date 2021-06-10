@@ -3,12 +3,11 @@ podTemplate {
         stage('Example Build') {
             echo 'Hello World'
         }
-        // stage('Example Deploy') {
-        //     when {
-        //         branch 'production'
-        //         echo 'Deploying'
-        //     }
-        // }
+        stage('Example Deploy') {
+            when {
+                branch 'production'
+                echo 'Deploying'
+            }
+        }
     }
 }
-
