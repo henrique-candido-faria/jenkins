@@ -1,4 +1,5 @@
 pipeline {
+    agent master
     node("jenkins-slave") {
         timeout(unit: 'SECONDS', time: 5) {
             stage("One"){
