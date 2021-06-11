@@ -1,12 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Example Hello world') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Example Repo') {
+        stage('DOWNLOAD REPOSITORY') {
             steps {
                 checkout([
                     $class: "GitSCM",
@@ -18,7 +13,7 @@ pipeline {
                 ])
             }
         }
-        stage('Exaple Deploy'){
+        stage('VALIDATION README.MD'){
         when { changeset "https://github.com/henrique-candido-faria/python/readme.md" }
             steps {
                 echo 'Deploying'
