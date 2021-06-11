@@ -1,8 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage('DOWNLOAD REPOSITORY') {
+        stage('VALIDATION README.MD') {
         when { changeset "readme.md" }
+            steps {
+                echo 'Building'
+            }
+        }
+        stage('DOWNLOAD REPOSITORY') {
             steps {
                 checkout([
                     $class: "GitSCM",
