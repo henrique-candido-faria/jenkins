@@ -17,7 +17,9 @@ pipeline {
                     userRemoteConfigs: [[credentialsId: "bitbucket", url: "https://github.com/henrique-candido-faria/python"]]
                 ])
             }
-            when { changeset "readme.md" }
+        }
+        when { changeset "readme.md" }
+        stage{
             steps {
                 echo 'Deploying'
             }
