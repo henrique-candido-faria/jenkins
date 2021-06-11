@@ -9,7 +9,7 @@ pipeline {
         stage('Example Deploy') {
             checkout([
                 $class: "GitSCM",
-                branches: [[name: "master"]],
+                branches: [[name: "prod"]],
                 doGenerateSubmoduleConfigurations: false,
                 extensions: [[$class: "RelativeTargetDirectory", relativeTargetDir: "tmp_git_app"]],
                 submoduleCfg: [],
