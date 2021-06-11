@@ -7,14 +7,16 @@ pipeline {
             }
         }
         stage('Example Deploy') {
-            checkout([
-                $class: "GitSCM",
-                branches: [[name: "prod"]],
-                doGenerateSubmoduleConfigurations: false,
-                extensions: [[$class: "RelativeTargetDirectory", relativeTargetDir: "tmp_git_app"]],
-                submoduleCfg: [],
-                userRemoteConfigs: [[credentialsId: "bitbucket", url: "https://github.com/henrique-candido-faria/python"]]
-            ])
+            steps {
+                checkout([
+                    $class: "GitSCM",
+                    branches: [[name: "prod"]],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [[$class: "RelativeTargetDirectory", relativeTargetDir: "tmp_git_app"]],
+                    submoduleCfg: [],
+                    userRemoteConfigs: [[credentialsId: "bitbucket", url: "https://github.com/henrique-candido-faria/python"]]
+                ])
+            }
             when { changeset "readme.md" }
             steps {
                 echo 'Deploying'
