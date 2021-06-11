@@ -1,9 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage {
+        stage('Example Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Example Deploy') {
             when { changeset "readme.md" }
-            steps{
+            steps {
                 echo 'Deploying'
             }
         }
