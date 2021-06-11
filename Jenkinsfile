@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('VALIDATION README.MD') {
+        stage('VALIDATION README.MD 1') {
         when { changeset "readme.md" }
             steps {
                 echo 'Building'
@@ -19,7 +19,7 @@ pipeline {
                 ])
             }
         }
-        stage('VALIDATION README.MD'){
+        stage('VALIDATION README.MD 2'){
         when { changeset "readme.md" }
             steps {
                 echo 'Deploying'
