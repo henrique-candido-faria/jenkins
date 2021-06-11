@@ -14,7 +14,7 @@ pipeline {
             }
         }
         stage('VALIDATION README.MD'){
-        when { changeset "https://github.com/henrique-candido-faria/python/readme.md" }
+        when { changeset "readme.md" }
             steps {
                 echo 'Deploying'
             }
