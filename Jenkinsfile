@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage('BUILD') {
-            step {
+            steps {
                 script {
                     node = load "scripted/node.groovy"
                     node()
