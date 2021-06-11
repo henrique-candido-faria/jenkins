@@ -18,11 +18,11 @@ pipeline {
                 ])
             }
         }
-        // when { changeset "readme.md" }
-        // stage {
-        //     steps {
-        //         echo 'Deploying'
-        //     }
-        // }
+        stage {
+        when { changeset "readme.md" }
+            steps {
+                echo 'Deploying'
+            }
+        }
     }
 }
