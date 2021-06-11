@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage{
+        stage {
             when { changeset "readme.md" }
-        }
-        steps{
-            echo 'Deploying'
+            steps{
+                echo 'Deploying'
+            }
         }
     }
 }
