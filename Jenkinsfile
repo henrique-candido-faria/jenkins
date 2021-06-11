@@ -1,29 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('VALIDATION README.MD 1') {
-        when { changeset "readme.md" }
-            steps {
-                echo 'Building'
-            }
-        }
-        stage('DOWNLOAD REPOSITORY') {
-            steps {
-                checkout([
-                    $class: "GitSCM",
-                    branches: [[name: "prod"]],
-                    doGenerateSubmoduleConfigurations: false,
-                    extensions: [[$class: "RelativeTargetDirectory", relativeTargetDir: "tmp_git_app"]],
-                    submoduleCfg: [],
-                    userRemoteConfigs: [[credentialsId: "bitbucket", url: "https://github.com/henrique-candido-faria/python"]]
-                ])
-            }
-        }
-        stage('VALIDATION README.MD 2'){
-        when { changeset "readme.md" }
-            steps {
-                echo 'Deploying'
-            }
+        stage('BUILD') {
+            node = load "scripted/node.groovy"
+            node()
         }
     }
 }
