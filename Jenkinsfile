@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Example Build') {
+        stage('Example Hello world') {
             steps {
                 echo 'Hello World'
             }
         }
-        stage('Example Deploy') {
+        stage('Example Repo') {
             steps {
                 checkout([
                     $class: "GitSCM",
@@ -18,7 +18,7 @@ pipeline {
                 ])
             }
         }
-        stage {
+        stage('Exaple Deploy'){
         when { changeset "readme.md" }
             steps {
                 echo 'Deploying'
