@@ -3,3 +3,4 @@ node("jenkins-slave") {
         echo 'hello'
     }
 }
+return
