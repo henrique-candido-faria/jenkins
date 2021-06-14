@@ -14,7 +14,9 @@ pipeline {
             }
         }
         stage('CONTINUE') {
-            echo 'Continue...'
+            steps {
+                echo 'Continue...'
+            }
         }
     }
 }
