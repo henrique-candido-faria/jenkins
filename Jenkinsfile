@@ -37,7 +37,10 @@ pipeline {
     agent {
         label 'jenkins-slave'
     }
-    parameters { choice(name: 'ENVIRONMENT', choices: ['dev', 'beta', 'prod'], description: 'Escolha qual sera o ambiente') }
+    parameters {
+        choice(name: 'ENVIRONMENT', choices: ['dev', 'beta', 'prod'], description: 'Escolha qual sera o ambiente')
+        string(name: 'CUSTOM_BRANCH', defaultValue: '', description: 'Necessario preencher ao utilizar o ambiente de dev')
+        }
     stages {
         stage('ENVIRONMENT') {
             steps {
@@ -49,7 +52,9 @@ pipeline {
                         echo 'beta'
                     }
                     if (ENVIRONMENT == "dev") {
+                        BRANCH = "${CUSTOM_BRANCH}"
                         echo 'dev'
+                        echo "${CUSTOM_BRANCH}"
                     }
                 }
             }
