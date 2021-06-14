@@ -1,13 +1,20 @@
 pipeline {
     agent master
     stages {
-        stage('BUILD') {
+        stage('INIT') {
             steps {
                 script {
-                    node = load "scripted/node.groovy"
-                    node()
+                    build = load "scripted/build.groovy"
+                    build()
+                }
+                script {
+                    deploy = load "scripted/deploy.groovy"
+                    deploy()
                 }
             }
+        }
+        stage('CONTINUE') {
+            echo 'Continue...'
         }
     }
 }
