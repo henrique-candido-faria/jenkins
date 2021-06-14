@@ -1,22 +1,34 @@
+// pipeline {
+//     agent {
+//         label 'jenkins-slave'
+//     }
+//     stages {
+//         stage('INIT') {
+//             steps {
+//                 checkout scm
+//                 script {
+//                     build = load "scripted/build.groovy"
+//                 }
+//                 script {
+//                     build()
+//                 }
+//             }
+//         }
+//         stage('CONTINUE') {
+//             steps {
+//                 echo 'Continue...'
+//             }
+//         }
+//     }
+// }
 pipeline {
     agent {
-        label 'jenkins-slave'
+        kubernetes { image 'node:14-alpine' }
     }
     stages {
-        stage('INIT') {
+        stage('Test') {
             steps {
-                checkout scm
-                script {
-                    build = load "scripted/build.groovy"
-                }
-                script {
-                    build()
-                }
-            }
-        }
-        stage('CONTINUE') {
-            steps {
-                echo 'Continue...'
+                sh 'node --version'
             }
         }
     }
