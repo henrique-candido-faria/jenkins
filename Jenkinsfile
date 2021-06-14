@@ -1,7 +1,10 @@
 pipeline {
-    agent none
+    agent {
+        label 'jenkins-slave'
+    }
     stages {
         stage('INIT') {
+            checkout scm
             steps {
                 script {
                     build = load "scripted/build.groovy"
