@@ -4,8 +4,8 @@ pipeline {
     }
     stages {
         stage('INIT') {
-            checkout scm
             steps {
+                checkout scm
                 script {
                     build = load "scripted/build.groovy"
                 }
