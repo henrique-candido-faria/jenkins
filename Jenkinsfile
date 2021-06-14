@@ -7,6 +7,8 @@ pipeline {
                     build = load "scripted/build.groovy"
                     build()
                 }
+            }
+            steps {
                 script {
                     deploy = load "scripted/deploy.groovy"
                     deploy()
