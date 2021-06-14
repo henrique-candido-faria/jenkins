@@ -37,6 +37,7 @@ pipeline {
     agent {
         label 'jenkins-slave'
     }
+    parameters { choice(name: 'ENVIRONMENT', choices: ['dev', 'beta', 'prod'], description: 'Escolha qual sera o ambiente') }
     stages {
         stage('ENVIRONMENT') {
             steps {
