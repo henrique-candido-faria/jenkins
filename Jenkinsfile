@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent master
     stages {
         stage('BUILD') {
             steps {
@@ -11,4 +11,3 @@ pipeline {
         }
     }
 }
-return this
