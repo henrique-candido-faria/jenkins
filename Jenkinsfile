@@ -21,14 +21,36 @@
 //         }
 //     }
 // }
+// pipeline {
+//     agent {
+//         kubernetes { image 'node:14-alpine' }
+//     }
+//     stages {
+//         stage('Test') {
+//             steps {
+//                 sh 'node --version'
+//             }
+//         }
+//     }
+// }
 pipeline {
     agent {
-        kubernetes { image 'node:14-alpine' }
+        label 'jenkins-slave'
     }
     stages {
-        stage('Test') {
+        stage('ENVIRONMENT') {
             steps {
-                sh 'node --version'
+                script { // Parametros esperados do Jenkins ENVIRONMENT, BRANCH, BUCKET, DNS
+                    if (ENVIRONMENT == "prod") {
+                        echo 'prod'
+                    }
+                    if (ENVIRONMENT == "beta") {
+                        echo 'beta'
+                    }
+                    if (ENVIRONMENT == "dev") {
+                        echo 'dev'
+                    }
+                }
             }
         }
     }
