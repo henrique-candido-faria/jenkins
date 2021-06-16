@@ -1,3 +1,3 @@
-FROM node:14-alpine
+FROM python:3.9.5-alpine3.13
 
-RUN 'Hello World'
+CMD ["python3 controller.py"]

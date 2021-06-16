@@ -1,10 +1,13 @@
 pipeline {
-    agent { dockerfile true }
+    // agent { dockerfile true }
     stages {
-        stage('Test') {
+        stage('INIT') {
             steps {
-                sh 'node --version'
-                sh 'svn --version'
+                // build = load "pipeline/scripted/build.groovy"
+                // build()
+                sh """
+                    docker build -t teste:teste -f Dockerfile .
+                """
             }
         }
     }
