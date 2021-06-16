@@ -1,6 +1,6 @@
 pipeline {
     // agent { dockerfile true }
-    label { "jenkin-slave" }
+    label 'jenkins-slave'
     stages {
         stage('INIT') {
             steps {
