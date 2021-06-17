@@ -1,15 +1,11 @@
 pipeline {
-    // agent { dockerfile true }
-    agent { label 'jenkins-slave' }
+    agent {
+        docker { image 'node:14-alpine' }
+    }
     stages {
-        stage('INIT') {
+        stage('Test') {
             steps {
-                // build = load "pipeline/scripted/build.groovy"
-                // build()
-                sh """
-                    ls -l
-                    docker build -t teste:teste -f Dockerfile .
-                """
+                sh 'node --version'
             }
         }
     }
